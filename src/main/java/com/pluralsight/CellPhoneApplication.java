@@ -24,15 +24,37 @@ public class CellPhoneApplication {
         System.out.print("Who is the owner of the phone? ");
         String owner = myScanner.nextLine();
 
-        CellPhone customer = new CellPhone(serialNumber, phoneModel, carrier, phoneNumber, owner);
+        CellPhone customer1 = new CellPhone(serialNumber, phoneModel, carrier, phoneNumber, owner);
 
-        System.out.println(customer.getSerialNumber());
-        System.out.println(customer.getModel());
-        System.out.println(customer.getCarrier());
-        System.out.println(customer.getPhoneNumber());
-        System.out.print(customer.getOwner());
+        System.out.println(customer1.getSerialNumber());
+        System.out.println(customer1.getModel());
+        System.out.println(customer1.getCarrier());
+        System.out.println(customer1.getPhoneNumber());
+        System.out.println(customer1.getOwner() + "\n");
+
+        CellPhone customer2 = new CellPhone(serialNumber, phoneModel, carrier, phoneNumber, owner);
+        customer2.setPhoneNumber("234-546-7777");
+        customer2.setOwner("Dave");
+        String calling = CellPhone.dial(phoneNumber);
+
+
+
+        System.out.print(display(customer1));
+        System.out.println(customer1.dial(customer2.getPhoneNumber()));
+
+        System.out.print(display(customer2));
+        System.out.println(customer2.dial(customer1.getPhoneNumber()));
 
         myScanner.close();
     }
 
+    private static String display(CellPhone phone) {
+        String own = "Owner: " + phone.getOwner();
+        String number = "Phone Number: " + phone.getPhoneNumber();
+        return own + "\n" + number;
+    }
+
+
 }
+
+

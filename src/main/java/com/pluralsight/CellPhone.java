@@ -59,4 +59,8 @@ public class CellPhone {
     }
 
     //endregion
+
+    public static String dial(String phoneNumber) {
+        return " is calling " + phoneNumber;
+    }
 }
