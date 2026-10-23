@@ -37,8 +37,6 @@ public class CellPhoneApplication {
         customer2.setOwner("Dave");
         String calling = CellPhone.dial(phoneNumber);
 
-
-
         System.out.print(display(customer1));
         System.out.println(customer1.dial(customer2.getPhoneNumber()));
 
@@ -53,7 +51,6 @@ public class CellPhoneApplication {
         String number = "Phone Number: " + phone.getPhoneNumber();
         return own + "\n" + number;
     }
-
 
 }
 
