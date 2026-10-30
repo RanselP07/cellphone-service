@@ -13,7 +13,7 @@ public class CellPhoneApplication {
         long serialNumber = Long.parseLong(number);
 
         System.out.print("What model is the phone? ");
-        String phoneModel = myScanner.nextLine();
+        String model = myScanner.nextLine();
 
         System.out.print("Who is the carrier? ");
         String carrier = myScanner.nextLine();
@@ -24,7 +24,7 @@ public class CellPhoneApplication {
         System.out.print("Who is the owner of the phone? ");
         String owner = myScanner.nextLine();
 
-        CellPhone customer1 = new CellPhone(serialNumber, phoneModel, carrier, phoneNumber, owner);
+        CellPhone customer1 = new CellPhone(serialNumber, model, carrier, phoneNumber, owner);
 
         System.out.println(customer1.getSerialNumber());
         System.out.println(customer1.getModel());
@@ -32,10 +32,9 @@ public class CellPhoneApplication {
         System.out.println(customer1.getPhoneNumber());
         System.out.println(customer1.getOwner() + "\n");
 
-        CellPhone customer2 = new CellPhone(serialNumber, phoneModel, carrier, phoneNumber, owner);
+        CellPhone customer2 = new CellPhone();
         customer2.setPhoneNumber("234-546-7777");
         customer2.setOwner("Dave");
-        String calling = CellPhone.dial(phoneNumber);
 
         System.out.print(display(customer1));
         System.out.println(customer1.dial(customer2.getPhoneNumber()));
@@ -53,5 +52,3 @@ public class CellPhoneApplication {
     }
 
 }
-
-
